@@ -3,9 +3,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    logger: new Logger(),
-  });
-  await app.listen(3000);
+    const app = await NestFactory.create(AppModule, {
+        logger: new Logger()
+    });
+
+    app.enableCors({ origin: 'http://localhost:4200' })
+    await app.listen(3000);
 }
 bootstrap();
