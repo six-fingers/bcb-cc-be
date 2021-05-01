@@ -6,7 +6,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getAppName(): string {
+    return 'BCB CC BE';
+  }
+
+  @Get('current-trading')
+  public async getCurrentTrading(): Promise<any[]> {
+    return (await this.appService.getCurrentTrading()).data;
   }
 }
