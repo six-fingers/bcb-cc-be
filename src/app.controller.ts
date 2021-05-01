@@ -4,17 +4,15 @@ import { ICryptoCurrrency } from './interfaces/crypto-currency.interface';
 
 @Controller()
 export class AppController {
-    constructor(
-        private readonly appService: AppService
-    ) { }
+  constructor(private readonly appService: AppService) {}
 
-    @Get()
-    getAppName(): string {
-        return 'BCB CC BE';
-    }
+  @Get()
+  getAppName(): string {
+    return 'BCB CC BE';
+  }
 
-    @Get('current-trading')
-    public async getCurrentTrading(): Promise<ICryptoCurrrency[]> {
-        return await this.appService.getCurrentTrading();
-    }
+  @Get('current-trading')
+  public async getCurrentTrading(): Promise<ICryptoCurrrency[]> {
+    return await this.appService.getCurrentTrading();
+  }
 }

@@ -1,7 +1,6 @@
-import { ICurrency } from "./currency.interface";
-
+import { ICurrency } from './currency.interface';
 
 export interface ICryptoCurrrency {
-    name: string,
-    currencies: ICurrency[]
+  name: string;
+  currencies: ICurrency[];
 }
